@@ -1,0 +1,29 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Employee</th>
+            <th scope="col">Office</th>
+            <th scope="col">Email</th>
+            <th scope="col">Social Media</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>
+                <img *ngIf="employee.imagePortraitUrl" [src]=" employee.imagePortraitUrl " alt="image " class="circleImage " id="employeeImage">    
+                {{ employee.name }}
+            </td>
+            <td>
+                {{employee.office}}
+            </td>
+            <td>
+                {{employee.email}}
+            </td>
+            <td style=" text-align: left; ">
+                <a *ngIf="employee.twitter " href="https://twitter.com/{{employee.twitter}}"><i class="fa fa-twitter "></i></a>
+                <a *ngIf="employee.gitHub " href="https://github.com/{{employee.gitHub}}"><i class="fa fa-github "></i></a>
+                <a *ngIf="employee.linkedIn " href="https://www.linkedin.com/{{employee.linkedIn}}"><i class="fa fa-linkedin "></i></a>
+            </td>
+        </tr>
+    </tbody>
+</table>

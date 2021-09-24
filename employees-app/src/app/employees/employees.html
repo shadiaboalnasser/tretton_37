@@ -1,9 +1,14 @@
 <app-nav-bar 
         (eventFilter)="filterAndSearchEmployees($event)" 
         (eventSort)="sortEmployees($event)" 
-        [offices]="offices">
+        [offices]="offices"
+        (eventView)="changeView($event)" 
+        [view]="view" >
 </app-nav-bar>
-<div class="columns container">
+<div *ngIf="view === 'cards'" class="columns container">
     <employee-card *ngFor="let employee of visibleEmployees | slice: (page-1) * pageSize : page * pageSize" [employee]="employee"></employee-card>
+</div>
+<div *ngIf="view === 'list'" class="container table-responsive">
+    <app-employees-list [employees]="visibleEmployees | slice: (page-1) * pageSize : page * pageSize"></app-employees-list>
 </div>
 <ngb-pagination class="columns " [(page)]="page " [pageSize]="pageSize " [collectionSize]="visibleEmployees.length " [boundaryLinks]="true " [maxSize]="3 "></ngb-pagination>
