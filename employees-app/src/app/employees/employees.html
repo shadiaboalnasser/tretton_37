@@ -1,3 +1,8 @@
+<app-nav-bar 
+        (eventFilter)="filterAndSearchEmployees($event)" 
+        (eventSort)="sortEmployees($event)" 
+        [offices]="offices">
+</app-nav-bar>
 <div class="columns container">
-    <employee-card *ngFor="let employee of employees" [employee]="employee"></employee-card>
+    <employee-card *ngFor="let employee of visibleEmployees" [employee]="employee"></employee-card>
 </div>
