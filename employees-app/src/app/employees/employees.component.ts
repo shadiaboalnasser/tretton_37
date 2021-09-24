@@ -13,6 +13,9 @@ export class EmployeesComponent {
   visibleEmployees: IEmployee[] = [];
   filteredEmployeesByOffice: IEmployee[] = [];
   offices!: string[];
+  page = 1;
+  pageSize = 10;
+  view = "cards";
 
   constructor(private employeeService: EmployeeService) {
 
@@ -27,6 +30,7 @@ export class EmployeesComponent {
       this.employees = employees;
       this.visibleEmployees = employees;
       this.offices = this.initEmployeesOffices(this.employees);
+      this.employeeService.replaceBrokenEmployeeImage(employees);
     });    
   }
 
@@ -42,6 +46,10 @@ export class EmployeesComponent {
      sortBy returned from nav component */
   sortEmployees(sortBy: string) {
     sortBy === "name" ? this.employees.sort(this.sortEmployeesByName) : this.employees.sort(this.sortEmployeesByOffice);
+  }
+
+  changeView(view: string) {
+    this.view = view;
   }
 
   sortEmployeesByName(employee1: IEmployee, employee2: IEmployee) {

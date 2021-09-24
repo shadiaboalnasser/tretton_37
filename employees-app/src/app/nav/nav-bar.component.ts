@@ -10,6 +10,8 @@ import { ToastrService } from "ngx-toastr";
 export class NavBarComponent implements OnInit {
   @Output() eventSort = new EventEmitter();
   @Output() eventFilter = new EventEmitter();
+  @Output() eventView = new EventEmitter();
+  @Input() view!: string;
   @Input() offices!: string[];
   sortBy!: string;
   filterInput:any;
@@ -36,6 +38,11 @@ export class NavBarComponent implements OnInit {
 
   emitFilter(){
     this.eventFilter.emit(this.filterInput)
+  }
+
+  emitView(view:string){
+    this.view = view;
+    this.eventView.emit(this.view);
   }
 
   searchValidation(){

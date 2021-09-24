@@ -1,7 +1,6 @@
 <div class="card">
   <div class="card-header">
-    <img *ngIf="employee.imagePortraitUrl" [src]="employee.imagePortraitUrl" alt="image of {{employee.name}}"/>
-    <img *ngIf="!employee.imagePortraitUrl" src="./assets/profile-photo.jpg" alt="image of {{employee.name}}"/>
+    <img [src]="employee.imagePortraitUrl" alt="image of {{employee.name}}"/>
   </div>
   <div class="card-body">
     <p class="employee-name">{{employee.name}}</p> 
