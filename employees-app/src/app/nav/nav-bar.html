@@ -6,5 +6,13 @@
               <button class="btn btn-default" [class.active]="sortBy==='office'" (click)="emitSortEmployees('office')" aria-label="Sort by office">Office <i class="fa fa-long-arrow-down"></i><span class="vertical-letters">A Z</span></button>
             </label>
         </div>
+        <div>
+            <select class="form-select" [(ngModel)]="filterInput.selectedOffice" name="office" (change)="emitFilter()">
+              <option *ngFor="let office of offices" [value]="office" [selected]="filterInput.selectedOffice === office">{{office}}</option>
+            </select>
+        </div>
+        <form class="form-inline"> 
+            <input [(ngModel)]="filterInput.searchTerm" name="term" (keyup)="searchValidation()" (search)="searchValidation()" class="form-control mr-sm-2" type="search" placeholder="Search"> 
+        </form> 
     </nav> 
 </section>

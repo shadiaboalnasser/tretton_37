@@ -1,6 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { EmployeeCardComponent } from './employees/employee-card/employee-card.component';
@@ -19,7 +21,9 @@ import { NavBarComponent } from './nav/nav-bar.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule 
+    HttpClientModule,
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
