@@ -30,4 +30,33 @@ export class EmployeeService {
       return of(result as T)
     }
   }
+
+  replaceBrokenEmployeeImage(employees:IEmployee[]){
+    for (const employee of employees) {
+      this.checkIfImageExists(employee.imagePortraitUrl, (exists: any) => {
+        if (!exists) {
+          employee.imagePortraitUrl = "assets/profile-photo.jpg";
+        }
+      });
+    }
+  }
+
+  checkIfImageExists(url:string | null, callback:any) {
+    const img = new Image();
+    if (url == null) {
+      return callback(false);
+    }
+    img.src = url;
+    if (img.complete) {
+      callback(true);
+    } else {
+      img.onload = () => {
+        callback(true);
+      };
+      
+      img.onerror = () => {
+        callback(false);
+      };
+    }
+  }
 }

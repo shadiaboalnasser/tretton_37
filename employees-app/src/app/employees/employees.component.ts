@@ -30,6 +30,7 @@ export class EmployeesComponent {
       this.employees = employees;
       this.visibleEmployees = employees;
       this.offices = this.initEmployeesOffices(this.employees);
+      this.employeeService.replaceBrokenEmployeeImage(employees);
     });    
   }
 
