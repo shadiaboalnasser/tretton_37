@@ -1,3 +1,4 @@
+<app-nav-bar (eventSort)="sortEmployees($event)"></app-nav-bar>
 <div class="columns container">
     <employee-card *ngFor="let employee of employees" [employee]="employee"></employee-card>
 </div>

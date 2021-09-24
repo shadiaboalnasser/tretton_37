@@ -7,13 +7,15 @@ import { EmployeeCardComponent } from './employees/employee-card/employee-card.c
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeService } from './employees/services/employee.service';
 import { HeaderComponent } from './header/header.component';
+import { NavBarComponent } from './nav/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     EmployeesComponent,
-    EmployeeCardComponent
+    EmployeeCardComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
