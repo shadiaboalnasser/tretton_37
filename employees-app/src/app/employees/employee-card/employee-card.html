@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <img *ngIf="employee.imagePortraitUrl" [src]="employee.imagePortraitUrl" alt="image of {{employee.name}}"/>
+    <img *ngIf="!employee.imagePortraitUrl" src="./assets/profile-photo.jpg" alt="image of {{employee.name}}"/>
+  </div>
+  <div class="card-body">
+    <p class="employee-name">{{employee.name}}</p> 
+    <a *ngIf="employee.twitter" href="https://twitter.com/{{employee.twitter}}" title="{{employee.name}} link to twitter"><i class="fa fa-twitter"></i></a>
+    <a *ngIf="employee.gitHub" href="https://github.com/{{employee.gitHub}}" title="{{employee.name}} link to gitHub"><i class="fa fa-github"></i></a>
+    <a *ngIf="employee.linkedIn" href="https://www.linkedin.com/{{employee.linkedIn}}" title="{{employee.name}} link to linkedIn"><i class="fa fa-linkedin"></i></a>
+    <p>
+      Office: {{employee.office}}
+    </p>
+  </div>
+</div>
