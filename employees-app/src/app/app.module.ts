@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { EmployeeCardComponent } from './employees/employee-card/employee-card.component';
@@ -23,7 +24,8 @@ import { NavBarComponent } from './nav/nav-bar.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgbModule,
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
