@@ -13,6 +13,8 @@ export class EmployeesComponent {
   visibleEmployees: IEmployee[] = [];
   filteredEmployeesByOffice: IEmployee[] = [];
   offices!: string[];
+  page = 1;
+  pageSize = 10;
 
   constructor(private employeeService: EmployeeService) {
 

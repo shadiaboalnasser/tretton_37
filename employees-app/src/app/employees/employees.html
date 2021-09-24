@@ -4,5 +4,6 @@
         [offices]="offices">
 </app-nav-bar>
 <div class="columns container">
-    <employee-card *ngFor="let employee of visibleEmployees" [employee]="employee"></employee-card>
+    <employee-card *ngFor="let employee of visibleEmployees | slice: (page-1) * pageSize : page * pageSize" [employee]="employee"></employee-card>
 </div>
+<ngb-pagination class="columns " [(page)]="page " [pageSize]="pageSize " [collectionSize]="visibleEmployees.length " [boundaryLinks]="true " [maxSize]="3 "></ngb-pagination>
