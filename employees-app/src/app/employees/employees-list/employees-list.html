@@ -20,9 +20,9 @@
                 {{employee.email}}
             </td>
             <td style=" text-align: left; ">
-                <a *ngIf="employee.twitter " href="https://twitter.com/{{employee.twitter}}"><i class="fa fa-twitter circle-border"></i></a>
-                <a *ngIf="employee.gitHub " href="https://github.com/{{employee.gitHub}}"><i class="fa fa-github circle-border"></i></a>
-                <a *ngIf="employee.linkedIn " href="https://www.linkedin.com/{{employee.linkedIn}}"><i class="fa fa-linkedin circle-border"></i></a>
+                <a *ngIf="employee.twitter " href="https://twitter.com/{{employee.twitter}}" title="{{employee.name}} link to twitter"><i class="fa fa-twitter circle-border"></i></a>
+                <a *ngIf="employee.gitHub " href="https://github.com/{{employee.gitHub}}" title="{{employee.name}} link to gitHub"><i class="fa fa-github circle-border"></i></a>
+                <a *ngIf="employee.linkedIn " href="https://www.linkedin.com/{{employee.linkedIn}}" title="{{employee.name}} link to linkedIn"><i class="fa fa-linkedin circle-border"></i></a>
             </td>
         </tr>
     </tbody>

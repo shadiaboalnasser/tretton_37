@@ -1,11 +1,11 @@
 <section> 
     <nav class="navbar">
         <div class="btn-group">
-            <button class="btn" type="button" (click)="emitView('cards')">
+            <button class="btn" type="button" (click)="emitView('cards')" title="Grid view">
               <i [class.text-muted]="view==='cards'" class="fa fa-th"></i>
             </button> 
-            <button class="btn" type="button" (click)="emitView('list')">
-              <i [class.text-muted]="view==='list'" class="fa fa-align-justify "></i>
+            <button class="btn" type="button" (click)="emitView('list')" title="List view">
+              <i [class.text-muted]="view==='list'" class="fa fa-align-justify"></i>
             </button>
         </div>
         <div class="btn-group btn-group-sm"> 
@@ -16,12 +16,12 @@
         </div>
         
         <div>
-            <select class="form-select" [(ngModel)]="filterInput.selectedOffice" name="office" (change)="emitFilter()">
+            <select class="form-select" [(ngModel)]="filterInput.selectedOffice" name="office" (change)="emitFilter()" aria-label="office filter">
               <option *ngFor="let office of offices" [value]="office" [selected]="filterInput.selectedOffice === office">{{office}}</option>
             </select>
         </div>
         <form class="form-inline"> 
-            <input [(ngModel)]="filterInput.searchTerm" name="term" (keyup)="searchValidation()" (search)="searchValidation()" class="form-control mr-sm-2" type="search" placeholder="Search"> 
+            <input [(ngModel)]="filterInput.searchTerm" name="term" (keyup)="searchValidation()" (search)="searchValidation()" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="search for employee name"> 
         </form> 
     </nav> 
 </section>
