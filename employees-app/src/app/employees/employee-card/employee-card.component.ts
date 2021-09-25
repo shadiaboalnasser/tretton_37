@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { IEmployee } from "../models/employee.model";
+import { IEmployee } from "..";
 
 @Component({
     selector:"employee-card",
