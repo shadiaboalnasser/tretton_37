@@ -20,7 +20,8 @@ This project is a simple view to show fellowship of tretton 37 was generated wit
   1. `git clone https://github.com/shadiaboalnasser/tretton_37.git`
   2. `cd employees-app`
   3. `npm install`
-  4. `ng serve` navigate to `http://localhost:4200/`.
+  4. Go to `employees-app/src/environments/environment.ts` and set your API key.
+  5. `ng serve` navigate to `http://localhost:4200/`.
  * Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
  * Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
@@ -35,3 +36,4 @@ This project is a simple view to show fellowship of tretton 37 was generated wit
 * I have started to implement both search for employee name and office in a search input, but then I noticed some employees have `lund` included in their names so decided to have a seperate filter for offices and use search input just for employees names, BTW both filters can work together.
 * We can use several ways to do sort and filters but I chose to not use a build in functions since it's an assignment.
 * I used ReSharper extention in Visual Studio to check styles work across Chrome, Firefox and Edge.
+* I exclude the API key from the code , just to prevent expose it on public repo.
