@@ -31,6 +31,49 @@ export class EmployeeService {
     }
   }
 
+  sortEmployeesByName(employee1: IEmployee, employee2: IEmployee) {
+    if (employee1.name > employee2.name) {
+      return 1;
+    } else if (employee1.name < employee2.name) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+
+  sortEmployeesByOffice(employee1: IEmployee, employee2: IEmployee) {
+    if (employee1.office > employee2.office) {
+      return 1;
+    } else if (employee1.office < employee2.office) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+
+  // return employees include search term in their name
+  filterEmployeesByName(employees: IEmployee[], searchTerm: string) {
+    searchTerm = searchTerm.toLocaleLowerCase();
+    return employees.filter(employee => {
+      return employee.name.toLocaleLowerCase().includes(searchTerm);
+    });
+  }
+  
+  // return employees have exactly same office , compared by string
+  filterEmployeesByOffice(employees: IEmployee[], office: string) {
+    return employees.filter(employee => {
+      return employee.office.toLocaleLowerCase() === office.toLocaleLowerCase();
+    });
+  }
+
+  // get a unique list of offices from employees
+  // in real world we get list of offices by API
+  initEmployeesOffices(arr: IEmployee[]): string[] {
+    const offices = arr.map(prop => prop.office).filter((value, index, self) => self.indexOf(value) === index);
+    offices.unshift("All Offices")
+    return offices;
+  }
+
   replaceBrokenEmployeeImage(employees:IEmployee[]){
     for (const employee of employees) {
       this.checkIfImageExists(employee.imagePortraitUrl, (exists: any) => {
